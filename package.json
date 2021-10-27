@@ -1,0 +1,24 @@
+{
+  "name": "p3_boucher_alexis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/style.scss:./css/style.css ",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./public/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": ""
+  
+  },
+  "homepage": ""
+
+  
+}

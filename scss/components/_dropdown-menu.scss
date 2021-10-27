@@ -1,0 +1,232 @@
+.filter{
+    display: flex;
+    margin-left: -40px;
+    gap: 10px;
+    &-blue{
+        box-shadow: $colorterciary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        gap: 10px;
+        cursor: pointer;
+        background:$colorterciary ;
+        border-radius: 6px;
+        color: white;
+        padding: 15px;
+        
+    }
+    
+    
+    &-green{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        gap: 10px;
+        cursor: pointer;
+        background:$colorsecondary ;
+        border-radius: 6px;
+        color: white;
+        padding: 15px;
+    }
+    &-orange{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        gap: 10px;
+        cursor: pointer;
+        background:$colorprimary ;
+        border-radius: 6px;
+        color: white;
+        padding: 15px;
+    }
+}
+.fa-times-circle{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+
+.btn{
+
+    &_container{
+        margin-top: 20px;
+        display:flex;
+        gap:20px;
+        position: relative;
+        flex-direction: row;
+        @media (max-width:1000px){
+			flex-direction: column;
+            gap:5px;
+		}
+        
+        
+    }
+    &_search{
+        position: relative;
+        @media (max-width:1000px){
+            width: auto;
+        }
+        &-blue{
+            background-color:$colorterciary;   
+        }
+        &-green{
+            background-color:$colorsecondary
+        }
+        &-orange{
+            background-color:$colorprimary
+        }
+
+    }
+    &_search input{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.3em;
+        color: white;
+        height: 78px;
+        cursor: pointer;
+        border:none;
+        border-radius:7px;
+        position:relative;
+        top: -80px;
+        width:700px;
+        
+    }
+    
+
+    &_filter{
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.3em;
+        color: white;
+        height: 78px;
+        cursor: pointer;
+        border:none;
+        border-radius:7px;
+        position: relative;
+        width: 190px;
+
+        &-blue{
+            background: $colorterciary;
+            width: 190px;
+                  
+        }
+        
+        &-green{
+            background: $colorsecondary;
+            width: 190px;
+            
+            
+        }
+        
+        &-orange{
+            background: $colorprimary;
+            width: 190px;
+            
+        }
+}
+}
+
+.fa-chevron-down{
+    font-size: 1.3em;
+    color: white;
+}
+.fa-chevron-up{
+    position:absolute;
+    right:30px;
+    top:-50px;
+    font-size: 1.6em;
+    color: black;
+    @media (max-width:1000px){
+        left:660px;
+    }
+}
+
+.dropdown-menu{
+    
+    
+    &-blue{
+        z-index: 1;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background: $colorterciary;
+        color: white;
+        font-size: 1.4em;
+        margin-top: -84px;
+        line-height: 1.5em;
+        width:664px;
+        border-radius:0px 0px 7px 7px;
+    }
+    &-blue li {
+        background: $colorterciary;
+        cursor: pointer;
+        margin-left:-25px;
+        border-radius:7px;
+        
+    }
+
+    &-green{
+        z-index: 1;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background: $colorsecondary;
+        color: white;
+        font-size: 1.2em;
+        margin-top: -84px;
+        line-height: 1.5em;
+        width:664px;
+        border-radius:0px 0px 7px 7px;
+
+    }
+    &-green li {
+        background: $colorsecondary;
+        cursor: pointer;
+        margin-left:-25px;
+        border-radius:7px;
+    }
+
+    &-orange{
+        z-index: 1;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background: $colorprimary;
+        color: white;
+        font-size: 1.2em;
+        margin-top: -84px;
+        line-height: 1.5em;
+        width:664px;
+        border-radius:0px 0px 7px 7px;
+        
+
+    }
+    &-orange li {
+        cursor: pointer;
+        margin-left:-25px;
+        border-radius:7px;
+    }
+    
+}
+.item{
+    display: block;
+}
+
+.btn_container-1{
+    display:none;
+    
+}
+
+.btn_container-2{
+display: none;
+}
+
+.btn_container-3{
+    display: none;
+}

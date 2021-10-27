@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/6d9cb8bfdb.js" crossorigin="anonymous"></script>
+		
+		<meta name="description" content="Les petit plats ">
+
+		<title>Les petit plats</title>
+        
+	</head>
+	<body>
+        <header>
+            <div class="header-logo">
+                <img alt="Logo" src="Logo.png"/>
+                
+            </div>
+
+            <nav class="navbar">
+                <div class="navbar_container">
+                  <form class="navbar_form" id="autocomplete">
+                    <input class="navbar_form-input" id="search-input" type="" placeholder="   Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Rechercher">
+                    <button class="navbar_form-button" type="submit"><i class="fas fa-search"></i></button>
+                  </form>
+                </div>
+              </nav>
+
+              <div><ul class="filter" id="filter"></ul></div>
+            <div class="btn_container">
+              <div>
+              <button  class="btn_filter btn_filter-blue" type="button">Ingédients
+                <span class="fas fa-chevron-down"></span>
+              </button>
+              
+                <div class="btn_container-1">
+                  <div class="btn_search">
+                <input type="" class=" btn_search-input btn_search-blue" placeholder="  Rechercher un ingredient"  aria-expanded="false">
+                  <span class="fas fa-chevron-up"></span>
+                </div>
+                  <div class="dropdown-mene">
+                    <ul class="dropdown-menu-blue">
+                    </ul>
+                  </div>  
+              </div>
+            </div>
+              
+              <div>
+              <button  class="btn_filter btn_filter-green" type="button">Appareil
+                <span class="fas fa-chevron-down"></span>
+              </button>
+                <div class="btn_container-2">
+                <div class="btn_search ">
+                <input type="text" class=" btn_search-input btn_search-green" placeholder="Rechercher un appareil"  aria-expanded="false">
+                <span class="fas fa-chevron-up fleche-green"></span>
+              </div>
+                <div class="dropdown-menu" > 
+                  <ul class="dropdown-menu-green">
+
+                  </ul>
+                                   
+                </div>
+              </div>
+            </div>
+              
+              <div>
+              <button  class="btn_filter btn_filter-orange" type="button">Ustensiles
+                <span class="fas fa-chevron-down"></span>
+              </button>
+                <div class="btn_container-3">
+                  <div class="btn_search ">
+                <input type="" class=" btn_search-input btn_search-orange" placeholder="  Rechercher un ustensiles"  aria-expanded="false">
+                <span class="fas fa-chevron-up fleche-orange"></span>
+              </div>
+                  <div class="dropdown-menu">
+                    <ul class="dropdown-menu-orange">
+
+                    </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+            
+        </header>
+
+        <main class="recettes">
+            <div class="recettes_container" id="recettes_container">
+                
+
+
+                </div>
+              </div>
+
+        </main>
+        <script src="./script/fetchAPI.js"></script>
+        <script src="./script/index.js"></script>
+        <script src="./script/dropdown.js"></script>
+        <script src="./script/dropdown-filtre.js"></script>
+        <script src="./script/dropdown--algo.js"></script>
+        
+	</body>
+</html>

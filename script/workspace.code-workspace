@@ -1,0 +1,40 @@
+{
+  "folders": [
+	{
+		"name": "Cour Javascript",
+		"path": "../../cours-ocr/Cour projet 3/Javascript/Cour Javascript"
+	},
+	{
+		"name": "JS-A-to-Z-master",
+		"path": "../../cours-ocr/Cour projet 3/JS-A-to-Z-master"
+	},
+	{
+		"name": "P3_Boucher_Alexis",
+		"path": "../../projet-fini/P3_Boucher_Alexis"
+	},
+	{
+		"name": " cour promise et fetch api",
+		"path": "../../cours-ocr/cour projet 6/ cour promise et fetch api"
+	},
+	{
+		"name": "JS-A-to-Z-57e9573398d7d9b637cc54e38cdf1713f4448181",
+		"path": "../../cours-ocr/cour projet 6/JS-A-to-Z-57e9573398d7d9b637cc54e38cdf1713f4448181"
+	},
+	{
+		"name": "starterOnly",
+		"path": "../../projet-fini/P4_Boucher_Alexis/starterOnly"
+	},
+	{
+		"path": "../../P7_Boucher_Alexis"
+	},
+	{
+		"path": "../../projet-fini/P6_Boucher_Alexis"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "P7_Boucher_Alexis"
+  }
+}

@@ -1,0 +1,48 @@
+.navbar{
+    
+    &_container{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        width: 100%; 
+    }
+    &_form{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        
+        &-input{
+            border-radius:5px;
+            border-color: transparent;
+            font-size: 1.4em;
+            background: rgb(231,231,231);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 7 ;
+            height: 75px;
+            position: relative;
+            width: 100%;
+            
+        }
+        &-button{
+            display: none;
+            display: block;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            width:60px;
+            height: 75px;
+            position: absolute;
+            right: 0px;
+            @media (max-width:1000px){
+                display: none;
+            }
+            
+        }
+    }
+}
