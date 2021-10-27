@@ -31,7 +31,6 @@ ul,li {
 		}
 		@media (max-width:1000px){
 			grid-template-columns: 1fr 1fr;
-		    margin-top: -70px;
 		}
 		@media (max-width:450px){
 			grid-template-columns: 1fr;
@@ -108,9 +107,4 @@ ul,li {
 			}
 		}
 	}
-}
-#noresult-msg{
-	margin-top: -40px;
-	width: 1000px;
-	font-size: 2em;
 }

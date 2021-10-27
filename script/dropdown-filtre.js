@@ -1,3 +1,4 @@
+//filtres des dropdown
 const searchFilterBlue = document.querySelector(".btn_search-blue")
 const searchFilterGreen = document.querySelector(".btn_search-green")
 const searchFilterOrange = document.querySelector(".btn_search-orange")
@@ -17,7 +18,7 @@ const initdropdown = async () => {
         if (!dropdownBlue.childNodes[i].textContent.toLowerCase().includes(searchString)) {
           dropdownBlue.childNodes[i].style.display = "none";
           
-        }else{
+        } else {
           dropdownBlue.childNodes[i].removeAttribute("style");
         }
       }

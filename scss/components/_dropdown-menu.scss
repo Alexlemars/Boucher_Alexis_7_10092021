@@ -58,18 +58,11 @@
         gap:20px;
         position: relative;
         flex-direction: row;
-        @media (max-width:1000px){
-			flex-direction: column;
-            gap:5px;
-		}
         
         
     }
     &_search{
         position: relative;
-        @media (max-width:1000px){
-            width: auto;
-        }
         &-blue{
             background-color:$colorterciary;   
         }
@@ -141,10 +134,7 @@
     right:30px;
     top:-50px;
     font-size: 1.6em;
-    color: black;
-    @media (max-width:1000px){
-        left:660px;
-    }
+    color: white;
 }
 
 .dropdown-menu{
@@ -161,13 +151,11 @@
         margin-top: -84px;
         line-height: 1.5em;
         width:664px;
-        border-radius:0px 0px 7px 7px;
     }
     &-blue li {
         background: $colorterciary;
         cursor: pointer;
         margin-left:-25px;
-        border-radius:7px;
         
     }
 
@@ -182,14 +170,13 @@
         margin-top: -84px;
         line-height: 1.5em;
         width:664px;
-        border-radius:0px 0px 7px 7px;
+        
 
     }
     &-green li {
         background: $colorsecondary;
         cursor: pointer;
         margin-left:-25px;
-        border-radius:7px;
     }
 
     &-orange{
@@ -203,14 +190,12 @@
         margin-top: -84px;
         line-height: 1.5em;
         width:664px;
-        border-radius:0px 0px 7px 7px;
         
 
     }
     &-orange li {
         cursor: pointer;
         margin-left:-25px;
-        border-radius:7px;
     }
     
 }

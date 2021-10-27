@@ -1,6 +1,6 @@
 {"recipes" : [
     {
-        "id": 1 ,
+        "id": 1,
         "name" : "Limonade de Coco",
         "servings" : 1,
         "ingredients": [
@@ -493,7 +493,7 @@
     },
     {
         "id": 15,
-        "name": "Crêpes Chocolat Bananes",
+        "name": "Crêpes Chocolat Banane",
         "servings": 10,
         "ingredients": [
             {
@@ -521,7 +521,7 @@
                 "unit": "grammes"
             },
             {
-                "ingredient": "Bananes",
+                "ingredient": "Banane",
                 "quantity": 4
             }
         ],
@@ -625,7 +625,7 @@
     },
     {
         "id": 19,
-        "name": "Shake Bananes Kiwi",
+        "name": "Shake Banane Kiwi",
         "servings": 4,
         "ingredients": [
             {
@@ -647,7 +647,7 @@
                 "unit":"grammes"
             },
             {
-                "ingredient": "Bananes",
+                "ingredient": "Banane",
                 "quantity": 1
             }
         ],

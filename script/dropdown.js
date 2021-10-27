@@ -5,71 +5,63 @@ const filter = document.querySelector(".filter");
 
 let tableaux = []
 //ajouter les ingredients,appareil,ustensiles
-const displayItemBlue = async (recipes) => {
-  dropdownBlue.innerHTML = "";
-  const tableau = [];
-  recipes.forEach((word) => {
-    word.ingredients.forEach((ingredients) => {
-      tableau.push(ingredients.ingredient);
+const displayItem = async (recipes) => {
+    dropdownBlue.innerHTML = "";
+    const tableau = [];
+    recipes.forEach((word) => {
+      word.ingredients.forEach((ingredients) => {
+        tableau.push(ingredients.ingredient.toLowerCase());
+      });
     });
-  });
-  const tableauIngredient = tableau.sort()
-  .filter(function (item, pos, ary) {
-    return !pos || item != ary[pos - 1]
-  }).splice(0, 30);
-
-  tableauIngredient.forEach((ingredient) => {
-    dropdownBlue.innerHTML += `<li class="item item-blue">${ingredient}</li>`
+    const tableauIngredient = tableau.sort().filter(function (item, pos, ary) {
+      return !pos || item != ary[pos - 1];
+    }).splice(0, 30);
+  
+    tableauIngredient.forEach((ingredient) => {
+      dropdownBlue.innerHTML += `<li class="item item-blue">${ingredient}</li>`
+    });
+    dropdownGreen.innerHTML = "";
+  
+  const tableauapp = [];
+  recipes.forEach((word) => {
+    tableauapp.push(word.appliance.toLowerCase());
     
   });
+  const tableauApp = tableauapp
+    .sort()
+    .filter(function (item, pos, ary) {
+      return !pos || item != ary[pos - 1];
+    })
+    
 
-}
-
-
-
-const displayItemGreen = async (recipes) => {
-  dropdownGreen.innerHTML = "";
-
-const tableauapp = [];
-recipes.forEach((word) => {
-  tableauapp.push(word.appliance);
-  
-});
-const tableauApp = tableauapp
-  .sort()
-  .filter(function (item, pos, ary) {
-    return !pos || item != ary[pos - 1];
-  })
-  .splice(0, 30);
-  
-
-tableauApp.forEach((app) => {
-  dropdownGreen.innerHTML += `<li class="item item-green">${app}</li>`;
-  
-});
-
-
-}
-const displayItemOrange = async (recipes) => {
-  dropdownOrange.innerHTML = "";
-const tableauust = [];
-recipes.forEach((word) => {
-  word.ustensils.forEach((ustensil) => {
-    tableauust.push(ustensil);
+  tableauApp.forEach((app) => {
+    dropdownGreen.innerHTML += `<li class="item item-green">${app}</li>`;
   });
-});
-const tableauUst = tableauust
-  .sort()
-  .filter(function (item, pos, ary) {
-    return !pos || item != ary[pos - 1];
-  })
-  .splice(0, 30);
+  
+  
 
-tableauUst.forEach((app) => {
-  dropdownOrange.innerHTML +=`<li class="item item-orange">${app}</li>`;
-});
+  
+    
+  
+    dropdownOrange.innerHTML = "";
+  const tableauust = [];
+  recipes.forEach((word) => {
+    word.ustensils.forEach((ustensil) => {
+      tableauust.push(ustensil.toLowerCase());
+    });
+  });
+  const tableauUst = tableauust
+    .sort()
+    .filter(function (item, pos, ary) {
+      return !pos || item != ary[pos - 1];
+    })
+    .splice(0, 30);
 
-};
+  tableauUst.forEach((app) => {
+    dropdownOrange.innerHTML += `<li class="item item-orange">${app}</li>`;
+  });
+  
+  };
 
    
     
