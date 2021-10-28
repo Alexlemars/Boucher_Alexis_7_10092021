@@ -1,5 +1,5 @@
-
-const displayAlgoBlue = async (tag) => {
+//permet de de d'afficher les ingredients
+const displayBlue = async (tag) => {
     const {recipes} = await getData()
         const searchIngredient = tag.textContent.toLowerCase()
 
@@ -18,8 +18,8 @@ const displayAlgoBlue = async (tag) => {
             displayItemGreen(filterItemIng);
             displayItemOrange(filterItemIng);
 }
-
-const displayAlgoGreen = async (tag) => {
+//permet de de d'afficher les appareils
+const displayGreen = async (tag) => {
     const {recipes} = await getData()
     
             const searchApp = tag.textContent.toLowerCase()
@@ -34,7 +34,8 @@ const displayAlgoGreen = async (tag) => {
             
 
     }
-    const displayAlgoOrange = async (tag) => {
+	//permet de de d'afficher les ustensiles
+    const displayOrange = async (tag) => {
         const {recipes} = await getData();
             const searchUstensiles = tag.textContent.toLowerCase() 
             
@@ -55,7 +56,7 @@ const displayAlgoGreen = async (tag) => {
             displayItemGreen(filterItemUstensiles);
 } 
 
-
+//Permet de filtrer avec les Tag
 let filterByTag = (tag)=>{
     let recipeCards = Array.from(document.getElementsByClassName("recettes_pages"))
     let input = tag.textContent.toLowerCase()
@@ -80,7 +81,7 @@ const create = (elm, attributes) => {
 	return element;
 }
 
-
+//Permet d'afficher les filtres 
 let createTagBlue = (target)=>{
     let selectedTag = create("li",{class:"filter-blue filter-all"});
     selectedTag.innerHTML = target.textContent +"<i class='far fa-times-circle'></i>"
@@ -118,19 +119,21 @@ const init = async () => {
 	let quickSort = (array, left, right) => {
 	let index;
 	if (array.length > 1) {
-		index = partition(array, left, right); //take index from partition
-		if (left<index-1) { //more elements on the left
+		index = partition(array, left, right); //prendre l'index de la partition
+		if (left<index-1) { //plus d'éléments sur la gauche
 			quickSort(array, left, index-1);
 		}
-		if (index<right) { //more elements on the right
+		if (index<right) { //plus d'éléments sur la droite
 			quickSort(array, index, right);
 		}
 	}
 	return array;
 }
-//partition code, to make a left and right elements list
+
+//code de partition, pour faire une liste d'éléments à gauche et à droite
 let partition = (array, left, right) => {
-	let pivot = array[Math.floor((right + left) / 2)]; //middle element
+	let pivot = array[Math.floor((right + left) / 2)]; 
+	//élément central
 
 	while (left <= right) {
 		while (array[left].localeCompare(pivot) < 0) {
@@ -147,13 +150,15 @@ let partition = (array, left, right) => {
 	}
 	return left;
 }
-//function to swap position
+
+//fonction pour changer de position
 let swap = (items, leftIndex, rightIndex) => {
 	var temp = items[leftIndex];
 	items[leftIndex] = items[rightIndex];
 	items[rightIndex] = temp;
 }
-//filter and extract only id, name, ingredients, and description
+
+// filtrer et extraire uniquement l'identifiant, le nom, les ingrédients et la description
 let createFilteredArr = (arr) => {
 	let filteredArr = [];
 	for (let i = 0; i<arr.length; i++) {
@@ -182,14 +187,16 @@ let extractKeyword = (arr) => {
 }
 let filteredKeywordArr = extractKeyword(filteredArr);
 
-//take only the keywords
+
+// ne prend que les mots-clés
 let allKeywords = [];
 filteredKeywordArr.forEach(item => {allKeywords.push(item.keyword)});
 let flatKeyword = allKeywords.flat();
 let allKeywordsLowerCase = [];
 flatKeyword.forEach(word => {allKeywordsLowerCase.push(word.toLowerCase())});
 let searchOptionsNotSorted = [...new Set(allKeywordsLowerCase.flat())];
-//sort by alphabetical order
+
+//tri par ordre alphabétique
 let searchOptions = quickSort(searchOptionsNotSorted, 0, searchOptionsNotSorted.length-1);
 
 function KeywordObject(item) {
@@ -215,7 +222,7 @@ let keywordArray = (arr) => {
 let keywordObjectArray = keywordArray(searchOptions);
 
 
-//simple binary search, to give the first found result
+//recherche binaire simple, pour donner le premier résultat trouvé
 let binarySearch = (array, target) => {
 	let start = 0;
 	let end = array.length-1;
@@ -236,7 +243,8 @@ let binarySearch = (array, target) => {
 	}
 }
 
-//binary search to get the range of all fitting result
+
+//recherche binaire pour obtenir la plage de tous les résultats d'ajustement
 let binarySearchMultiple = (array, target) => {
 	let firstMatch = binarySearch(array, target);
 	let resultArr = [-1, -1];
@@ -272,7 +280,8 @@ let binarySearchMultiple = (array, target) => {
 	return [...new Set(selectedIds.flat())].sort(function(a,b) {return a-b});	
 }
 
-//searching function
+
+//fonction de recherche
 let launchSearch = (e) => {
 	
 	if (searchBar.value.length > 2) {
@@ -307,14 +316,14 @@ let launchSearch = (e) => {
             e.preventDefault()
             deleteItem(e.target)
             filterByTag(e.target)
-            displayAlgoBlue(e.target)
+            displayBlue(e.target)
             createTagBlue(e.target)
             dropDownContainerBlue.style.display = "none";
         }else if(e.target.matches(".item-green")){
             e.preventDefault()
             filterByTag(e.target)
             deleteItem(e.target)
-            displayAlgoGreen(e.target)
+            displayGreen(e.target)
             createTagGreen(e.target)
             searchFilterGreen.value=""
             dropDownContainerGreen.style.display = "none";
@@ -322,7 +331,7 @@ let launchSearch = (e) => {
             e.preventDefault()
             filterByTag(e.target)
             deleteItem(e.target)
-            displayAlgoOrange(e.target)
+            displayOrange(e.target)
             createTagOrange(e.target)
             searchFilterOrange.value=""
             dropDownContainerOrange.style.display = "none";
