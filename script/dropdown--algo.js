@@ -172,8 +172,8 @@ let filteredArr = createFilteredArr(recipesArray);
 function FilterKeyword(item) {
 	this.id = item.id;
 	let thisIngre = item.ingredients.map(b => b.ingredient.toLowerCase()).flat();
-	let keywordString = item.name + " " + thisIngre + " " + item.description;
-	let uniqueValue = [...new Set(keywordString.split(/[\s,().]+/))];
+	let keywordString = item.name.toLowerCase() + " " + thisIngre + " " + item.description.toLowerCase();
+	let uniqueValue = [...new Set(keywordString.split(/[\s,().]+""/))];
 	this.keyword = quickSort(uniqueValue, 0, uniqueValue.length-1);
 }
 
