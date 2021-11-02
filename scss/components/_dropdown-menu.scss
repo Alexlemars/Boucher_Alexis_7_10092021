@@ -94,6 +94,9 @@
         position:relative;
         top: -80px;
         width:700px;
+        @media (max-width:690px){
+            width: 100%;
+        }
         
     }
     
@@ -110,16 +113,25 @@
         border-radius:7px;
         position: relative;
         width: 190px;
+        @media (max-width:690px){
+            justify-content: space-between;
+        }
 
         &-blue{
             background: $colorterciary;
             width: 190px;
+            @media (max-width:690px){
+                width: 100%;
+            }
                   
         }
         
         &-green{
             background: $colorsecondary;
             width: 190px;
+            @media (max-width:690px){
+                width: 100%;
+            }
             
             
         }
@@ -127,6 +139,9 @@
         &-orange{
             background: $colorprimary;
             width: 190px;
+            @media (max-width:690px){
+                width: 100%;
+            }
             
         }
 }
@@ -145,6 +160,10 @@
     @media (max-width:1000px){
         left:660px;
     }
+    @media (max-width:690px){
+        left:320px
+    }
+    
 }
 
 .dropdown-menu{
@@ -162,6 +181,11 @@
         line-height: 1.5em;
         width:660px;
         border-radius:0px 0px 7px 7px;
+        @media (max-width:690px){
+            grid-template-columns: 1fr 1fr ;
+            gap: 2px;
+            width: 89%;
+        }
     }
     &-blue li {
         background: $colorterciary;
@@ -183,6 +207,11 @@
         line-height: 1.5em;
         width:660px;
         border-radius:0px 0px 7px 7px;
+        @media (max-width:690px){
+            grid-template-columns: 1fr 1fr ;
+            gap: 2px;
+            width: 89%;
+        }
 
     }
     &-green li {
@@ -204,6 +233,11 @@
         line-height: 1.5em;
         width:660px;
         border-radius:0px 0px 7px 7px;
+        @media (max-width:690px){
+            grid-template-columns: 1fr 1fr ;
+            gap: 2px;
+            width: 89%;
+        }
         
 
     }
