@@ -334,7 +334,7 @@ ul, li {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 100px;
+  gap: 80px;
 }
 @media (max-width: 1200px) {
   .recettes_container {
@@ -393,7 +393,7 @@ ul, li {
   font-weight: 500;
 }
 .recettes_pages-description-ingredients {
-  font-size: 0.8em;
+  font-size: 0.7em;
   padding: 0;
   width: 180px;
 }
