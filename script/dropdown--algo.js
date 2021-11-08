@@ -129,14 +129,14 @@ const searchBars = async () => {
     const recette = [];
     for (let recipe of recipes) {
       if (
-        recipe.name.toLowerCase().sansAccent().includes(critere) ||
-        recipe.description.toLowerCase().sansAccent().includes(critere)
+        recipe.name.toLowerCase().sansAccent().indexOf(critere) > -1 ||
+        recipe.description.toLowerCase().sansAccent().indexOf(critere) > -1
       ) {
         recette.push(recipe);
         continue;
       }
       for (let ing of recipe.ingredients) {
-        if (ing.ingredient.toLowerCase().sansAccent().includes(critere)) {
+        if (ing.ingredient.toLowerCase().sansAccent().indexOf(critere) > -1) {
           recette.push(recipe);
           break;
         }
