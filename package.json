@@ -16,9 +16,9 @@
   "browserslist": "last 4 versions",
   "bugs": {
     "url": ""
-  
   },
-  "homepage": ""
-
-  
+  "homepage": "",
+  "dependencies": {
+    "eslint": "^8.2.0"
+  }
 }

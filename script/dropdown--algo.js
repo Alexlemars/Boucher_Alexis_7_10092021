@@ -101,10 +101,15 @@ let createTagOrange = (target) => {
 
 
 
-//filtre bar de recherches avec mot clef avec la fonction "for"
+//filtre bar de recherches avec mot clef 
 const searchBars = async () => {
   const { recipes } = await getData();
 
+
+/**
+ * 
+ * @description / Fonction pour ignorer les accent lors de la recherche
+ */
   String.prototype.sansAccent = function(){
     var accent = [
         /[\300-\306]/g, /[\340-\346]/g, // A, a
@@ -121,41 +126,56 @@ const searchBars = async () => {
     for(var i = 0; i < accent.length; i++){
         str = str.replace(accent[i], noaccent[i]);
     }
-     
+    
     return str;
+    
 }
-
+/**
+ * 
+ * @param {string} critere
+ * @param {Array} recipes
+ * @param {Object} recipe
+ * @param {string} recipe.name
+ * @param {string} recipes.description
+ * @param {string} ing.ingredient
+ * @return {promise}
+ * @description /Fonction de recherche avec une boucle for qui renvoie un tableau de recette.
+ */
   function search(critere) {
     const recette = [];
     for (let recipe of recipes) {
+      
       if (
         recipe.name.toLowerCase().sansAccent().indexOf(critere) > -1 ||
-        recipe.description.toLowerCase().sansAccent().indexOf(critere) > -1
+        recipe.description.toLowerCase().sansAccent().indexOf(critere) > -1 //    
       ) {
-        recette.push(recipe);
+        recette.push(recipe); //Push les resultats dans la tableau recette
         continue;
       }
       for (let ing of recipe.ingredients) {
         if (ing.ingredient.toLowerCase().sansAccent().indexOf(critere) > -1) {
-          recette.push(recipe);
+          recette.push(recipe); //Push les resultats dans la tableau recette
           break;
         }
       }
     }
-	createCard(recette)
+    
+	 return createCard(recette)
+   
   }
-
-
   
+/**
+ * @description / Ecouteur d'evenement au clavier
+ */
 
   searchBar.addEventListener("keyup", function (e) {
     e.preventDefault;
-    if (searchBar.value.length > 2) {
+    if (searchBar.value.length > 2) { // minimun de 3 caracteres
 	  element.innerHTML = ""
-      search(e.target.value);
+      search(e.target.value.toLowerCase());
 	  if(element.innerHTML === ""){
 		element.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>";
-	  }
+	  } // Message d'erreur si aucun resultat
     }
 	else {
 		element.innerHTML = ""
@@ -171,7 +191,9 @@ searchBars();
 const init = async () => {
   const { recipes } = await getData();
   createCard(recipes);
-
+/**
+ * @description / ecouteur d'evenement au click 
+ */
   document.addEventListener("click", (e) => {
     if (e.target.matches(".item-blue")) {
       e.preventDefault();

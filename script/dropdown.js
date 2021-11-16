@@ -87,6 +87,8 @@ document.addEventListener("click", (e) => {
     dropDownContainerBlue.style.display = "none";
     dropDownContainerGreen.style.display = "none";
   } else if (e.target.matches(".fa-chevron-up")) {
+    e.preventDefault;
+    e.stopPropagation;
     dropDownContainerOrange.style.display = "none";
     dropDownContainerBlue.style.display = "none";
     dropDownContainerGreen.style.display = "none";
